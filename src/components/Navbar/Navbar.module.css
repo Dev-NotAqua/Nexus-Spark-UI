@@ -1,0 +1,146 @@
+.navbar {
+  @apply w-full;
+}
+
+/* Variants */
+.default {
+  @apply bg-white border-b border-gray-200 shadow-sm;
+}
+
+.dark {
+  @apply bg-gray-900 border-b border-gray-700;
+}
+
+.transparent {
+  @apply bg-transparent;
+}
+
+/* Positions */
+.static {
+  @apply relative;
+}
+
+.fixed {
+  @apply fixed top-0 left-0 right-0 z-50;
+}
+
+.sticky {
+  @apply sticky top-0 z-40;
+}
+
+/* Sizes */
+.small .container {
+  @apply py-2;
+}
+
+.medium .container {
+  @apply py-4;
+}
+
+.large .container {
+  @apply py-6;
+}
+
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between;
+}
+
+.brand {
+  @apply flex items-center cursor-pointer;
+}
+
+.nav {
+  @apply hidden md:flex items-center space-x-8;
+}
+
+.navItem {
+  @apply text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer bg-transparent border-none;
+}
+
+.dark .navItem {
+  @apply text-gray-300 hover:text-white;
+}
+
+.transparent .navItem {
+  @apply text-gray-800 hover:text-gray-900;
+}
+
+.navItem.active {
+  @apply text-blue-600 bg-blue-50;
+}
+
+.dark .navItem.active {
+  @apply text-blue-400 bg-blue-900/50;
+}
+
+.transparent .navItem.active {
+  @apply text-blue-600 bg-blue-50/80;
+}
+
+.navItem.disabled {
+  @apply text-gray-400 cursor-not-allowed;
+}
+
+.dark .navItem.disabled {
+  @apply text-gray-600;
+}
+
+.mobileMenuButton {
+  @apply md:hidden p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+.dark .mobileMenuButton {
+  @apply text-gray-300 hover:text-white hover:bg-gray-700;
+}
+
+.transparent .mobileMenuButton {
+  @apply text-gray-800 hover:text-gray-900 hover:bg-gray-100/80;
+}
+
+.hamburger {
+  @apply w-6 h-6;
+}
+
+.mobileNav {
+  @apply md:hidden border-t border-gray-200 bg-white;
+}
+
+.dark .mobileNav {
+  @apply border-gray-700 bg-gray-900;
+}
+
+.transparent .mobileNav {
+  @apply bg-white/95 backdrop-blur-sm;
+}
+
+.mobileNavItem {
+  @apply block w-full text-left px-4 py-3 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 border-none bg-transparent cursor-pointer;
+}
+
+.dark .mobileNavItem {
+  @apply text-gray-300 hover:text-white hover:bg-gray-700;
+}
+
+.transparent .mobileNavItem {
+  @apply text-gray-800 hover:text-gray-900 hover:bg-gray-100/80;
+}
+
+.mobileNavItem.active {
+  @apply text-blue-600 bg-blue-50;
+}
+
+.dark .mobileNavItem.active {
+  @apply text-blue-400 bg-blue-900/50;
+}
+
+.transparent .mobileNavItem.active {
+  @apply text-blue-600 bg-blue-50/80;
+}
+
+.mobileNavItem.disabled {
+  @apply text-gray-400 cursor-not-allowed;
+}
+
+.dark .mobileNavItem.disabled {
+  @apply text-gray-600;
+}

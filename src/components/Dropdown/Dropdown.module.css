@@ -1,0 +1,81 @@
+.dropdownContainer {
+  @apply relative flex flex-col space-y-1;
+}
+
+.label {
+  @apply text-sm font-medium text-gray-700;
+}
+
+.dropdown {
+  @apply relative;
+}
+
+.trigger {
+  @apply w-full flex items-center justify-between bg-white border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors cursor-pointer;
+}
+
+/* Sizes */
+.small {
+  @apply px-3 py-1.5 text-sm;
+}
+
+.medium {
+  @apply px-3 py-2 text-base;
+}
+
+.large {
+  @apply px-4 py-3 text-lg;
+}
+
+/* States */
+.error {
+  @apply border-red-500 focus:border-red-500 focus:ring-red-500;
+}
+
+.disabled {
+  @apply bg-gray-50 cursor-not-allowed opacity-50;
+}
+
+.selectedText {
+  @apply text-gray-900;
+}
+
+.placeholderText {
+  @apply text-gray-500;
+}
+
+.icon {
+  @apply w-5 h-5 text-gray-400 transition-transform duration-200;
+}
+
+.iconOpen {
+  @apply rotate-180;
+}
+
+.menu {
+  @apply absolute top-full left-0 right-0 mt-1 bg-white border border-gray-300 rounded-md shadow-lg z-10 max-h-60 overflow-auto;
+}
+
+.option {
+  @apply w-full px-3 py-2 text-left text-gray-900 hover:bg-gray-50 focus:bg-gray-50 focus:outline-none transition-colors;
+}
+
+.optionSelected {
+  @apply bg-blue-50 text-blue-900;
+}
+
+.optionDisabled {
+  @apply text-gray-400 cursor-not-allowed;
+}
+
+.optionDisabled:hover {
+  @apply bg-white;
+}
+
+.helperText {
+  @apply text-sm text-gray-600;
+}
+
+.errorText {
+  @apply text-red-600;
+}
