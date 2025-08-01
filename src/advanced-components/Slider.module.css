@@ -1,0 +1,293 @@
+/* Slider Component Styles */
+.slider {
+  @apply relative w-full h-6 cursor-pointer;
+}
+
+.slider.vertical {
+  @apply w-6 h-48;
+}
+
+.slider.disabled {
+  @apply cursor-not-allowed opacity-50;
+}
+
+.slider.sm {
+  @apply h-4;
+}
+
+.slider.md {
+  @apply h-6;
+}
+
+.slider.lg {
+  @apply h-8;
+}
+
+.slider.vertical.sm {
+  @apply w-4 h-32;
+}
+
+.slider.vertical.md {
+  @apply w-6 h-48;
+}
+
+.slider.vertical.lg {
+  @apply w-8 h-64;
+}
+
+/* Rail - the full slider track */
+.rail {
+  @apply absolute bg-gray-300 rounded-full;
+}
+
+.rail.sm {
+  @apply h-1;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+}
+
+.rail.md {
+  @apply h-1.5;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+}
+
+.rail.lg {
+  @apply h-2;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+}
+
+.vertical .rail.sm {
+  @apply w-1 h-full;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.vertical .rail.md {
+  @apply w-1.5 h-full;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.vertical .rail.lg {
+  @apply w-2 h-full;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Track - the selected portion */
+.track {
+  @apply absolute bg-blue-600 rounded-full;
+}
+
+.track.sm {
+  @apply h-1;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.track.md {
+  @apply h-1.5;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.track.lg {
+  @apply h-2;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.vertical .track.sm {
+  @apply w-1;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.vertical .track.md {
+  @apply w-1.5;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.vertical .track.lg {
+  @apply w-2;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Handle - the draggable control */
+.handle {
+  @apply absolute bg-white border-2 border-blue-600 rounded-full shadow-md cursor-grab focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-150;
+  transform: translate(-50%, -50%);
+  top: 50%;
+}
+
+.vertical .handle {
+  left: 50%;
+  transform: translate(-50%, 50%);
+  top: auto;
+}
+
+.handle.sm {
+  @apply w-4 h-4;
+}
+
+.handle.md {
+  @apply w-5 h-5;
+}
+
+.handle.lg {
+  @apply w-6 h-6;
+}
+
+.handle.active {
+  @apply cursor-grabbing shadow-lg scale-110;
+}
+
+.handle.disabled {
+  @apply cursor-not-allowed border-gray-400;
+}
+
+/* Tooltip */
+.tooltip {
+  @apply absolute bg-gray-900 text-white text-xs px-2 py-1 rounded pointer-events-none;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tooltip.sm {
+  @apply text-xs px-1.5 py-0.5;
+}
+
+.tooltip.md {
+  @apply text-xs px-2 py-1;
+}
+
+.tooltip.lg {
+  @apply text-sm px-2.5 py-1.5;
+}
+
+.vertical .tooltip {
+  @apply left-auto;
+  left: calc(100% + 8px);
+  bottom: auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.tooltip::after {
+  content: '';
+  @apply absolute w-0 h-0;
+  border: 4px solid transparent;
+  border-top-color: theme('colors.gray.900');
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.vertical .tooltip::after {
+  border: 4px solid transparent;
+  border-right-color: theme('colors.gray.900');
+  right: 100%;
+  top: 50%;
+  left: auto;
+  transform: translateY(-50%);
+}
+
+/* Marks */
+.marks {
+  @apply absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.mark {
+  @apply absolute;
+}
+
+.mark.sm {
+  transform: translateX(-50%);
+  top: calc(50% + 8px);
+}
+
+.mark.md {
+  transform: translateX(-50%);
+  top: calc(50% + 12px);
+}
+
+.mark.lg {
+  transform: translateX(-50%);
+  top: calc(50% + 16px);
+}
+
+.vertical .mark.sm {
+  transform: translateY(50%);
+  left: calc(50% + 8px);
+  top: auto;
+}
+
+.vertical .mark.md {
+  transform: translateY(50%);
+  left: calc(50% + 12px);
+  top: auto;
+}
+
+.vertical .mark.lg {
+  transform: translateY(50%);
+  left: calc(50% + 16px);
+  top: auto;
+}
+
+.markDot {
+  @apply w-1 h-1 bg-gray-400 rounded-full;
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.vertical .markDot {
+  top: 50%;
+  left: -4px;
+  transform: translateY(-50%);
+}
+
+.mark.included .markDot {
+  @apply bg-blue-600;
+}
+
+.markLabel {
+  @apply text-xs text-gray-600 whitespace-nowrap;
+  margin-top: 4px;
+}
+
+.vertical .markLabel {
+  margin-top: 0;
+  margin-left: 4px;
+}
+
+/* Hover and focus states */
+.handle:hover:not(.disabled) {
+  @apply border-blue-700;
+}
+
+.handle:focus:not(.disabled) {
+  @apply border-blue-700;
+}

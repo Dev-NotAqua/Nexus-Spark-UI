@@ -1,0 +1,125 @@
+/* Table Component Styles */
+.tableContainer {
+  @apply w-full overflow-x-auto;
+}
+
+.table {
+  @apply w-full bg-white;
+}
+
+.table.bordered {
+  @apply border border-gray-200 rounded-lg overflow-hidden;
+}
+
+.table.loading {
+  @apply opacity-70;
+}
+
+/* Table head */
+.tableHead {
+  @apply bg-gray-50;
+}
+
+.tableHeader {
+  @apply px-4 py-3 text-left text-gray-700 font-medium border-b border-gray-200 focus:outline-none focus:bg-gray-100;
+}
+
+.tableHeader.sm {
+  @apply px-3 py-2 text-sm;
+}
+
+.tableHeader.md {
+  @apply px-4 py-3 text-base;
+}
+
+.tableHeader.lg {
+  @apply px-6 py-4 text-lg;
+}
+
+.tableHeader.center {
+  @apply text-center;
+}
+
+.tableHeader.right {
+  @apply text-right;
+}
+
+.tableHeader.sortable {
+  @apply cursor-pointer hover:bg-gray-100 transition-colors duration-200;
+}
+
+.headerContent {
+  @apply flex items-center justify-between;
+}
+
+.sortIcon {
+  @apply ml-2 text-gray-400 text-sm;
+}
+
+/* Table body */
+.tableBody {
+  @apply bg-white;
+}
+
+.tableRow {
+  @apply border-b border-gray-200 last:border-b-0;
+}
+
+.tableRow.clickable {
+  @apply cursor-pointer focus:outline-none focus:bg-gray-50;
+}
+
+.table.hover .tableRow:hover {
+  @apply bg-gray-50;
+}
+
+.table.striped .tableRow:nth-child(even) {
+  @apply bg-gray-50;
+}
+
+.table.striped.hover .tableRow:nth-child(even):hover {
+  @apply bg-gray-100;
+}
+
+.table.striped.hover .tableRow:nth-child(odd):hover {
+  @apply bg-gray-100;
+}
+
+.tableCell {
+  @apply px-4 py-3 text-gray-900;
+}
+
+.tableCell.sm {
+  @apply px-3 py-2 text-sm;
+}
+
+.tableCell.md {
+  @apply px-4 py-3 text-base;
+}
+
+.tableCell.lg {
+  @apply px-6 py-4 text-lg;
+}
+
+.tableCell.center {
+  @apply text-center;
+}
+
+.tableCell.right {
+  @apply text-right;
+}
+
+/* Loading and empty states */
+.loadingCell,
+.emptyCell {
+  @apply px-4 py-8 text-center text-gray-500;
+}
+
+.loadingSpinner {
+  @apply inline-flex items-center;
+}
+
+.loadingSpinner::before {
+  content: '';
+  @apply inline-block w-4 h-4 mr-2 border-2 border-gray-300 border-t-blue-600 rounded-full animate-spin;
+}

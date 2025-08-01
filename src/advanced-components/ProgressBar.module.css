@@ -1,0 +1,163 @@
+/* ProgressBar Component Styles */
+.lineContainer {
+  @apply flex items-center gap-3;
+}
+
+.lineOuter {
+  @apply flex-1 relative overflow-hidden rounded-full;
+}
+
+.lineOuter.sm {
+  @apply min-h-[4px];
+}
+
+.lineOuter.md {
+  @apply min-h-[8px];
+}
+
+.lineOuter.lg {
+  @apply min-h-[12px];
+}
+
+.lineInner {
+  @apply w-full bg-gray-200 rounded-full relative overflow-hidden;
+}
+
+.lineInner.success {
+  @apply bg-green-100;
+}
+
+.lineInner.error {
+  @apply bg-red-100;
+}
+
+.lineInner.warning {
+  @apply bg-yellow-100;
+}
+
+.lineBg {
+  @apply h-full rounded-full transition-all duration-500 ease-out;
+  background-color: #3b82f6;
+}
+
+.lineBg.success {
+  @apply bg-green-500;
+}
+
+.lineBg.error {
+  @apply bg-red-500;
+}
+
+.lineBg.warning {
+  @apply bg-yellow-500;
+}
+
+.lineBg.animated {
+  position: relative;
+  overflow: hidden;
+}
+
+.lineBg.animated::after {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-25;
+  animation: progressShine 2s infinite;
+}
+
+.progressText {
+  @apply text-gray-700 font-medium whitespace-nowrap;
+}
+
+.progressText.sm {
+  @apply text-xs;
+}
+
+.progressText.md {
+  @apply text-sm;
+}
+
+.progressText.lg {
+  @apply text-base;
+}
+
+/* Circle and Dashboard Progress */
+.circleContainer {
+  @apply relative inline-block;
+}
+
+.circleSvg {
+  @apply block;
+}
+
+.circleTrail {
+  @apply opacity-25;
+}
+
+.circlePath {
+  @apply transition-all duration-500 ease-out;
+}
+
+.circlePath.animated {
+  animation: progressRotate 2s linear infinite;
+}
+
+.circlePath.success {
+  stroke: #22c55e;
+}
+
+.circlePath.error {
+  stroke: #ef4444;
+}
+
+.circlePath.warning {
+  stroke: #f59e0b;
+}
+
+.circleText {
+  @apply absolute inset-0 flex items-center justify-center font-medium text-gray-700;
+}
+
+.circleText.sm {
+  @apply text-xs;
+}
+
+.circleText.md {
+  @apply text-sm;
+}
+
+.circleText.lg {
+  @apply text-base;
+}
+
+/* Animations */
+@keyframes progressShine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes progressRotate {
+  from {
+    transform: rotate(-90deg);
+  }
+  to {
+    transform: rotate(270deg);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .lineContainer {
+    @apply gap-2;
+  }
+  
+  .progressText {
+    @apply text-xs;
+  }
+  
+  .circleText {
+    @apply text-xs;
+  }
+}

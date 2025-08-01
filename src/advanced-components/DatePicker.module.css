@@ -1,0 +1,155 @@
+/* DatePicker Component Styles */
+.datePickerContainer {
+  @apply relative inline-block w-full max-w-xs;
+}
+
+.inputWrapper {
+  @apply relative;
+}
+
+.input {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-md bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200;
+}
+
+.input.sm {
+  @apply px-2 py-1 text-sm;
+}
+
+.input.md {
+  @apply px-3 py-2 text-base;
+}
+
+.input.lg {
+  @apply px-4 py-3 text-lg;
+}
+
+.input.disabled {
+  @apply bg-gray-100 text-gray-500 cursor-not-allowed;
+}
+
+.calendarIcon {
+  @apply absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 focus:outline-none focus:text-gray-600 transition-colors duration-200;
+}
+
+.calendarIcon.sm {
+  @apply text-sm right-1.5;
+}
+
+.calendarIcon.md {
+  @apply text-base right-2;
+}
+
+.calendarIcon.lg {
+  @apply text-lg right-3;
+}
+
+.dropdown {
+  @apply absolute top-full left-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 min-w-full;
+}
+
+.dropdown.sm {
+  @apply text-xs;
+}
+
+.dropdown.md {
+  @apply text-sm;
+}
+
+.dropdown.lg {
+  @apply text-base;
+}
+
+/* Calendar Header */
+.calendarHeader {
+  @apply flex items-center justify-between p-3 border-b border-gray-200;
+}
+
+.navButton {
+  @apply w-8 h-8 flex items-center justify-center text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200;
+}
+
+.monthYear {
+  @apply font-semibold text-gray-900 flex-1 text-center;
+}
+
+/* Weekday Headers */
+.weekdayHeaders {
+  @apply grid grid-cols-7 gap-1 p-2 bg-gray-50 border-b border-gray-200;
+}
+
+.weekdayHeader {
+  @apply text-center text-gray-600 font-medium py-1 text-xs;
+}
+
+/* Calendar Grid */
+.calendarGrid {
+  @apply grid grid-cols-7 gap-1 p-2;
+}
+
+.dayButton {
+  @apply w-8 h-8 flex items-center justify-center text-gray-900 hover:bg-blue-50 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200;
+}
+
+.dayButton.otherMonth {
+  @apply text-gray-400;
+}
+
+.dayButton.selected {
+  @apply bg-blue-600 text-white hover:bg-blue-700;
+}
+
+.dayButton.today {
+  @apply font-bold text-blue-600;
+}
+
+.dayButton.today.selected {
+  @apply text-white;
+}
+
+.dayButton.disabled {
+  @apply text-gray-300 cursor-not-allowed hover:bg-transparent;
+}
+
+/* Calendar Footer */
+.calendarFooter {
+  @apply flex items-center justify-between p-3 border-t border-gray-200 bg-gray-50;
+}
+
+.footerButton {
+  @apply px-3 py-1 text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .dropdown {
+    @apply left-1/2 transform -translate-x-1/2 w-80 max-w-[calc(100vw-2rem)];
+  }
+  
+  .calendarHeader {
+    @apply p-2;
+  }
+  
+  .monthYear {
+    @apply text-sm;
+  }
+  
+  .navButton {
+    @apply w-6 h-6 text-sm;
+  }
+  
+  .weekdayHeader {
+    @apply text-xs;
+  }
+  
+  .dayButton {
+    @apply w-6 h-6 text-sm;
+  }
+  
+  .calendarFooter {
+    @apply p-2;
+  }
+  
+  .footerButton {
+    @apply px-2 py-1 text-sm;
+  }
+}

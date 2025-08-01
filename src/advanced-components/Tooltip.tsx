@@ -35,14 +35,14 @@ export const Tooltip: React.FC<TooltipProps> = ({
   variant = 'dark'
 }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
+  const [timeoutId, setTimeoutId] = useState<number | null>(null);
   const triggerRef = useRef<HTMLDivElement>(null);
 
   const showTooltip = () => {
     if (timeoutId) {
       clearTimeout(timeoutId);
     }
-    const id = setTimeout(() => setIsVisible(true), delay);
+    const id = window.setTimeout(() => setIsVisible(true), delay);
     setTimeoutId(id);
   };
 
