@@ -65,3 +65,24 @@ export {
   Slider,
   type SliderProps,
 } from './components/Slider/Slider';
+
+// Export ProgressBar component
+export {
+  ProgressBar,
+  CircularProgress,
+  type ProgressBarProps,
+  type CircularProgressProps,
+} from './components/ProgressBar/ProgressBar';
+
+// Export DatePicker component
+export {
+  DatePicker,
+  type DatePickerProps,
+} from './components/DatePicker/DatePicker';
+
+// Export FileUpload component
+export {
+  FileUpload,
+  type FileUploadProps,
+  type FileItem,
+} from './components/FileUpload/FileUpload';

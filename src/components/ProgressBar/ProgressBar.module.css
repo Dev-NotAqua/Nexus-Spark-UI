@@ -1,0 +1,290 @@
+.progress-container {
+  /* Custom CSS variables for theming */
+  --progress-bg: theme('colors.gray.200');
+  --progress-fill-default: theme('colors.blue.500');
+  --progress-fill-success: theme('colors.green.500');
+  --progress-fill-warning: theme('colors.yellow.500');
+  --progress-fill-error: theme('colors.red.500');
+  --progress-fill-info: theme('colors.blue.500');
+  --progress-text: theme('colors.gray.700');
+  --progress-border-radius: 9999px;
+}
+
+/* Base progress bar styling */
+.progress-bar {
+  width: 100%;
+}
+
+.progress-track {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--progress-bg);
+  border-radius: var(--progress-border-radius);
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: var(--progress-border-radius);
+  transition: width 0.3s ease-out, background-color 0.2s ease;
+}
+
+/* Size variants */
+.progress-track.size-small {
+  height: 0.25rem;
+}
+
+.progress-track.size-default {
+  height: 0.5rem;
+}
+
+.progress-track.size-large {
+  height: 1rem;
+}
+
+/* Variant colors */
+.progress-fill.variant-default {
+  background-color: var(--progress-fill-default);
+}
+
+.progress-fill.variant-success {
+  background-color: var(--progress-fill-success);
+}
+
+.progress-fill.variant-warning {
+  background-color: var(--progress-fill-warning);
+}
+
+.progress-fill.variant-error {
+  background-color: var(--progress-fill-error);
+}
+
+.progress-fill.variant-info {
+  background-color: var(--progress-fill-info);
+}
+
+/* Striped pattern */
+.progress-fill.striped {
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 1rem 1rem;
+}
+
+/* Animated stripes */
+.progress-fill.animated.striped {
+  animation: progress-stripes 1s linear infinite;
+}
+
+@keyframes progress-stripes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1rem 0;
+  }
+}
+
+/* Indeterminate progress */
+.progress-indeterminate {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 33.333%;
+  background-color: var(--progress-fill-default);
+  border-radius: var(--progress-border-radius);
+  animation: progress-indeterminate 2s ease-in-out infinite;
+}
+
+@keyframes progress-indeterminate {
+  0% {
+    left: -33.333%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: -33.333%;
+  }
+}
+
+/* Progress label */
+.progress-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--progress-text);
+}
+
+.progress-label-text {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.progress-value {
+  font-weight: 500;
+}
+
+/* Circular progress */
+.circular-progress {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circular-progress-svg {
+  transform: rotate(-90deg);
+}
+
+.circular-progress-circle {
+  fill: none;
+  transition: stroke-dashoffset 0.3s ease-out;
+}
+
+.circular-progress-bg {
+  stroke: var(--progress-bg);
+}
+
+.circular-progress-fill {
+  stroke-linecap: round;
+}
+
+.circular-progress-fill.variant-default {
+  stroke: var(--progress-fill-default);
+}
+
+.circular-progress-fill.variant-success {
+  stroke: var(--progress-fill-success);
+}
+
+.circular-progress-fill.variant-warning {
+  stroke: var(--progress-fill-warning);
+}
+
+.circular-progress-fill.variant-error {
+  stroke: var(--progress-fill-error);
+}
+
+.circular-progress-fill.variant-info {
+  stroke: var(--progress-fill-info);
+}
+
+.circular-progress-fill.indeterminate {
+  animation: circular-progress-rotate 2s linear infinite;
+}
+
+@keyframes circular-progress-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.circular-progress-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--progress-text);
+}
+
+.circular-progress-percentage {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.circular-progress-text {
+  font-size: 0.75rem;
+  color: theme('colors.gray.500');
+  margin-top: 0.25rem;
+}
+
+/* Accessibility */
+.progress-bar[role="progressbar"] {
+  /* Ensure screen readers can access the progress information */
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .progress-container {
+    --progress-bg: theme('colors.gray.700');
+    --progress-fill-default: theme('colors.blue.400');
+    --progress-fill-success: theme('colors.green.400');
+    --progress-fill-warning: theme('colors.yellow.400');
+    --progress-fill-error: theme('colors.red.400');
+    --progress-fill-info: theme('colors.blue.400');
+    --progress-text: theme('colors.gray.200');
+  }
+
+  .circular-progress-text {
+    color: theme('colors.gray.400');
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .progress-container {
+    --progress-bg: black;
+    --progress-fill-default: blue;
+    --progress-fill-success: green;
+    --progress-fill-warning: orange;
+    --progress-fill-error: red;
+    --progress-fill-info: blue;
+  }
+
+  .progress-track {
+    border: 1px solid currentColor;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .progress-fill,
+  .circular-progress-circle {
+    transition: none;
+  }
+
+  .progress-fill.animated,
+  .progress-indeterminate,
+  .circular-progress-fill.indeterminate {
+    animation: none;
+  }
+}
+
+/* Focus styles for accessibility */
+.progress-bar:focus-visible {
+  outline: 2px solid theme('colors.blue.500');
+  outline-offset: 2px;
+}
+
+/* Small screen adjustments */
+@media (max-width: 640px) {
+  .progress-label {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.125rem;
+  }
+
+  .circular-progress-percentage {
+    font-size: 1rem;
+  }
+
+  .circular-progress-text {
+    font-size: 0.625rem;
+  }
+}

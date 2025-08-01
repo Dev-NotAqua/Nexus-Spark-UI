@@ -1,0 +1,389 @@
+.fileupload-container {
+  /* Custom CSS variables for theming */
+  --fileupload-border: theme('colors.gray.300');
+  --fileupload-border-hover: theme('colors.gray.400');
+  --fileupload-border-active: theme('colors.blue.400');
+  --fileupload-bg: theme('colors.white');
+  --fileupload-bg-hover: theme('colors.gray.50');
+  --fileupload-bg-active: theme('colors.blue.50');
+  --fileupload-text: theme('colors.gray.900');
+  --fileupload-text-muted: theme('colors.gray.500');
+  --fileupload-text-active: theme('colors.blue.500');
+  --fileupload-icon: theme('colors.gray.400');
+  --fileupload-icon-active: theme('colors.blue.500');
+}
+
+/* Dropzone styling */
+.fileupload-dropzone {
+  position: relative;
+  border: 2px dashed var(--fileupload-border);
+  border-radius: theme('borderRadius.lg');
+  background-color: var(--fileupload-bg);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.fileupload-dropzone:hover {
+  border-color: var(--fileupload-border-hover);
+  background-color: var(--fileupload-bg-hover);
+}
+
+.fileupload-dropzone.drag-over {
+  border-color: var(--fileupload-border-active);
+  background-color: var(--fileupload-bg-active);
+}
+
+.fileupload-dropzone.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.fileupload-dropzone.disabled:hover {
+  border-color: var(--fileupload-border);
+  background-color: var(--fileupload-bg);
+}
+
+/* Dropzone content */
+.fileupload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.fileupload-icon {
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 1rem;
+  color: var(--fileupload-icon);
+  transition: color 0.2s ease;
+}
+
+.fileupload-dropzone.drag-over .fileupload-icon {
+  color: var(--fileupload-icon-active);
+}
+
+.fileupload-title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--fileupload-text);
+  margin-bottom: 0.5rem;
+}
+
+.fileupload-dropzone.drag-over .fileupload-title {
+  color: var(--fileupload-text-active);
+}
+
+.fileupload-description {
+  font-size: 0.875rem;
+  color: var(--fileupload-text-muted);
+  line-height: 1.5;
+}
+
+/* Hidden file input */
+.fileupload-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+}
+
+/* File list */
+.fileupload-list {
+  margin-top: 1rem;
+}
+
+.fileupload-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  background-color: theme('colors.gray.50');
+  border: 1px solid theme('colors.gray.200');
+  border-radius: theme('borderRadius.lg');
+  margin-bottom: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.fileupload-item:hover {
+  background-color: theme('colors.gray.100');
+}
+
+.fileupload-item:last-child {
+  margin-bottom: 0;
+}
+
+/* File preview */
+.fileupload-preview {
+  flex-shrink: 0;
+  margin-right: 0.75rem;
+}
+
+.fileupload-preview-image {
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+  border-radius: theme('borderRadius.DEFAULT');
+}
+
+.fileupload-preview-placeholder {
+  width: 3rem;
+  height: 3rem;
+  background-color: theme('colors.gray.200');
+  border-radius: theme('borderRadius.DEFAULT');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fileupload-preview-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: theme('colors.gray.500');
+}
+
+/* File info */
+.fileupload-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.fileupload-info-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+
+.fileupload-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--fileupload-text);
+  truncate: true;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fileupload-actions {
+  display: flex;
+  align-items: center;
+  margin-left: 0.5rem;
+}
+
+.fileupload-status {
+  margin-right: 0.5rem;
+}
+
+.fileupload-status-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.fileupload-remove {
+  padding: 0.25rem;
+  color: theme('colors.gray.400');
+  background: none;
+  border: none;
+  border-radius: theme('borderRadius.DEFAULT');
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.fileupload-remove:hover {
+  color: theme('colors.gray.600');
+  background-color: theme('colors.gray.200');
+}
+
+.fileupload-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+}
+
+.fileupload-size {
+  color: var(--fileupload-text-muted);
+}
+
+.fileupload-error {
+  color: theme('colors.red.500');
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Progress bar */
+.fileupload-progress {
+  margin-top: 0.5rem;
+}
+
+.fileupload-progress-track {
+  width: 100%;
+  height: 0.5rem;
+  background-color: theme('colors.gray.200');
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.fileupload-progress-fill {
+  height: 100%;
+  background-color: theme('colors.blue.500');
+  border-radius: 9999px;
+  transition: width 0.3s ease;
+}
+
+/* Status variants */
+.fileupload-item.success {
+  border-color: theme('colors.green.200');
+  background-color: theme('colors.green.50');
+}
+
+.fileupload-item.error {
+  border-color: theme('colors.red.200');
+  background-color: theme('colors.red.50');
+}
+
+.fileupload-item.uploading {
+  border-color: theme('colors.blue.200');
+  background-color: theme('colors.blue.50');
+}
+
+/* Loading spinner */
+.fileupload-spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid theme('colors.blue.500');
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: fileupload-spin 1s linear infinite;
+}
+
+@keyframes fileupload-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .fileupload-container {
+    --fileupload-border: theme('colors.gray.600');
+    --fileupload-border-hover: theme('colors.gray.500');
+    --fileupload-border-active: theme('colors.blue.400');
+    --fileupload-bg: theme('colors.gray.800');
+    --fileupload-bg-hover: theme('colors.gray.750');
+    --fileupload-bg-active: theme('colors.blue.900');
+    --fileupload-text: theme('colors.gray.100');
+    --fileupload-text-muted: theme('colors.gray.400');
+    --fileupload-text-active: theme('colors.blue.400');
+    --fileupload-icon: theme('colors.gray.500');
+    --fileupload-icon-active: theme('colors.blue.400');
+  }
+
+  .fileupload-item {
+    background-color: theme('colors.gray.750');
+    border-color: theme('colors.gray.600');
+  }
+
+  .fileupload-item:hover {
+    background-color: theme('colors.gray.700');
+  }
+
+  .fileupload-preview-placeholder {
+    background-color: theme('colors.gray.600');
+  }
+
+  .fileupload-preview-icon {
+    color: theme('colors.gray.400');
+  }
+
+  .fileupload-remove {
+    color: theme('colors.gray.400');
+  }
+
+  .fileupload-remove:hover {
+    color: theme('colors.gray.200');
+    background-color: theme('colors.gray.600');
+  }
+
+  .fileupload-progress-track {
+    background-color: theme('colors.gray.600');
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .fileupload-container {
+    --fileupload-border: currentColor;
+    --fileupload-border-hover: currentColor;
+    --fileupload-border-active: highlight;
+  }
+
+  .fileupload-dropzone {
+    border-width: 3px;
+  }
+
+  .fileupload-item {
+    border-width: 2px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .fileupload-dropzone,
+  .fileupload-icon,
+  .fileupload-item,
+  .fileupload-remove,
+  .fileupload-progress-fill {
+    transition: none;
+  }
+
+  .fileupload-spinner {
+    animation: none;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .fileupload-content {
+    padding: 1rem;
+  }
+
+  .fileupload-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .fileupload-title {
+    font-size: 1rem;
+  }
+
+  .fileupload-description {
+    font-size: 0.8125rem;
+  }
+
+  .fileupload-item {
+    padding: 0.625rem;
+  }
+
+  .fileupload-preview-image,
+  .fileupload-preview-placeholder {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .fileupload-name {
+    font-size: 0.8125rem;
+  }
+
+  .fileupload-details {
+    font-size: 0.6875rem;
+  }
+}
