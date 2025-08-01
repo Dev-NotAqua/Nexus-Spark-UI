@@ -1,0 +1,84 @@
+.accordion-root {
+  /* Custom CSS variables for theming */
+  --accordion-border: theme('colors.gray.200');
+  --accordion-bg: theme('colors.gray.50');
+  --accordion-hover-bg: theme('colors.gray.100');
+  --accordion-text: theme('colors.gray.900');
+  --accordion-content-text: theme('colors.gray.700');
+  --accordion-border-radius: theme('borderRadius.lg');
+}
+
+/* Item states */
+.accordion-item[data-state="open"] {
+  border-color: theme('colors.blue.200');
+}
+
+.accordion-item[data-state="open"] .accordion-trigger {
+  background-color: theme('colors.blue.50');
+  color: theme('colors.blue.900');
+}
+
+/* Smooth content transitions */
+.accordion-content {
+  transition: max-height 0.2s ease-out, opacity 0.2s ease-out;
+}
+
+.accordion-content[data-state="open"] {
+  animation: accordion-down 0.2s ease-out;
+}
+
+.accordion-content[data-state="closed"] {
+  animation: accordion-up 0.2s ease-out;
+}
+
+/* Keyframe animations */
+@keyframes accordion-down {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    max-height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+  to {
+    max-height: 0;
+    opacity: 0;
+  }
+}
+
+/* Focus styles */
+.accordion-trigger:focus {
+  outline: 2px solid theme('colors.blue.500');
+  outline-offset: -2px;
+}
+
+/* Icon rotation */
+.accordion-icon {
+  transition: transform 0.2s ease-out;
+}
+
+.accordion-item[data-state="open"] .accordion-icon {
+  transform: rotate(180deg);
+}
+
+/* Disabled state */
+.accordion-item:has(.accordion-trigger:disabled) {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.accordion-trigger:disabled {
+  cursor: not-allowed;
+}
+
+.accordion-trigger:disabled:hover {
+  background-color: var(--accordion-bg);
+}

@@ -1,0 +1,55 @@
+.tabs-root {
+  /* Custom CSS variables for theming */
+  --tabs-bg: theme('colors.gray.100');
+  --tabs-text: theme('colors.gray.600');
+  --tabs-text-active: theme('colors.gray.900');
+  --tabs-bg-active: theme('colors.white');
+  --tabs-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tabs-border-radius: theme('borderRadius.lg');
+}
+
+.tabs-root[data-orientation="vertical"] {
+  display: flex;
+  gap: theme('spacing.4');
+}
+
+.tabs-root[data-orientation="vertical"] .tabs-list {
+  flex-direction: column;
+  width: 12rem;
+  height: auto;
+}
+
+.tabs-root[data-orientation="vertical"] .tabs-trigger {
+  width: 100%;
+  margin-bottom: theme('spacing.1');
+}
+
+/* Focus styles for better accessibility */
+.tabs-trigger:focus-visible {
+  outline: 2px solid theme('colors.blue.500');
+  outline-offset: 2px;
+}
+
+/* Smooth transitions */
+.tabs-trigger {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover effects */
+.tabs-trigger:hover:not(:disabled) {
+  background-color: theme('colors.gray.50');
+  color: theme('colors.gray.900');
+}
+
+/* Active state */
+.tabs-trigger[aria-selected="true"] {
+  background-color: var(--tabs-bg-active);
+  color: var(--tabs-text-active);
+  box-shadow: var(--tabs-shadow);
+}
+
+/* Disabled state */
+.tabs-trigger:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

@@ -1,0 +1,215 @@
+.table-container {
+  /* Custom CSS variables for theming */
+  --table-border: theme('colors.gray.300');
+  --table-border-light: theme('colors.gray.200');
+  --table-bg: theme('colors.white');
+  --table-header-bg: theme('colors.gray.50');
+  --table-hover-bg: theme('colors.gray.50');
+  --table-stripe-bg: theme('colors.gray.25');
+  --table-text: theme('colors.gray.900');
+  --table-text-secondary: theme('colors.gray.600');
+}
+
+/* Base table styling */
+.table-container table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: var(--table-bg);
+  color: var(--table-text);
+}
+
+/* Header styling */
+.table-container thead {
+  background-color: var(--table-header-bg);
+}
+
+.table-container th {
+  font-weight: 600;
+  color: var(--table-text);
+  border-bottom: 2px solid var(--table-border-light);
+  position: relative;
+  user-select: none;
+}
+
+/* Sortable column styling */
+.table-container th.sortable {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.table-container th.sortable:hover {
+  background-color: theme('colors.gray.100');
+}
+
+/* Body styling */
+.table-container tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.table-container tbody tr:hover {
+  background-color: var(--table-hover-bg);
+}
+
+/* Striped rows */
+.table-container tbody tr.striped {
+  background-color: var(--table-stripe-bg);
+}
+
+.table-container tbody tr.striped:hover {
+  background-color: theme('colors.gray.75');
+}
+
+/* Cell styling */
+.table-container td {
+  border-bottom: 1px solid var(--table-border-light);
+  vertical-align: middle;
+}
+
+/* Bordered table */
+.table-container.bordered table {
+  border: 1px solid var(--table-border);
+}
+
+.table-container.bordered th,
+.table-container.bordered td {
+  border-right: 1px solid var(--table-border-light);
+}
+
+.table-container.bordered th:last-child,
+.table-container.bordered td:last-child {
+  border-right: none;
+}
+
+/* Fixed columns */
+.table-container th.fixed-left,
+.table-container td.fixed-left {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background-color: inherit;
+}
+
+.table-container th.fixed-right,
+.table-container td.fixed-right {
+  position: sticky;
+  right: 0;
+  z-index: 1;
+  background-color: inherit;
+}
+
+/* Sticky header */
+.table-container.sticky thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: var(--table-header-bg);
+}
+
+/* Loading state */
+.table-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: var(--table-text-secondary);
+}
+
+.table-loading .spinner {
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid theme('colors.gray.200');
+  border-top: 2px solid theme('colors.blue.500');
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Empty state */
+.table-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--table-text-secondary);
+}
+
+/* Size variants */
+.table-container.size-small th,
+.table-container.size-small td {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+}
+
+.table-container.size-middle th,
+.table-container.size-middle td {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.table-container.size-large th,
+.table-container.size-large td {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+}
+
+/* Sort icons */
+.table-sort-icon {
+  margin-left: 0.5rem;
+  flex-shrink: 0;
+}
+
+.table-sort-icon.active {
+  color: theme('colors.blue.500');
+}
+
+.table-sort-icon.inactive {
+  color: theme('colors.gray.400');
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .table-container {
+    overflow-x: auto;
+  }
+  
+  .table-container table {
+    min-width: 100%;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .table-container {
+    --table-border: theme('colors.gray.600');
+    --table-border-light: theme('colors.gray.700');
+    --table-bg: theme('colors.gray.800');
+    --table-header-bg: theme('colors.gray.750');
+    --table-hover-bg: theme('colors.gray.700');
+    --table-stripe-bg: theme('colors.gray.775');
+    --table-text: theme('colors.gray.100');
+    --table-text-secondary: theme('colors.gray.400');
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .table-container {
+    --table-border: currentColor;
+    --table-border-light: currentColor;
+  }
+  
+  .table-container th,
+  .table-container td {
+    border-color: currentColor;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .table-container * {
+    transition: none;
+    animation: none;
+  }
+}
