@@ -1,0 +1,155 @@
+/* FileUpload Component Styles */
+.fileUploadContainer {
+  @apply w-full;
+}
+
+.hiddenInput {
+  @apply hidden;
+}
+
+/* Upload Button Variant */
+.uploadButton {
+  @apply px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200;
+}
+
+.uploadButton.sm {
+  @apply px-3 py-1.5 text-sm;
+}
+
+.uploadButton.md {
+  @apply px-4 py-2 text-base;
+}
+
+.uploadButton.lg {
+  @apply px-6 py-3 text-lg;
+}
+
+.uploadButton.disabled {
+  @apply bg-gray-300 text-gray-500 cursor-not-allowed hover:bg-gray-300;
+}
+
+/* Dropzone Variant */
+.dropzone {
+  @apply border-2 border-dashed border-gray-300 rounded-lg bg-gray-50 hover:bg-gray-100 cursor-pointer transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+}
+
+.dropzone.sm {
+  @apply p-4;
+}
+
+.dropzone.md {
+  @apply p-6;
+}
+
+.dropzone.lg {
+  @apply p-8;
+}
+
+.dropzone.dragOver {
+  @apply border-blue-500 bg-blue-50;
+}
+
+.dropzone.disabled {
+  @apply border-gray-200 bg-gray-100 cursor-not-allowed hover:bg-gray-100;
+}
+
+.dropzoneContent {
+  @apply flex flex-col items-center justify-center text-center;
+}
+
+.uploadIcon {
+  @apply text-4xl mb-2 text-gray-400;
+}
+
+.uploadText {
+  @apply text-gray-600;
+}
+
+.primaryText {
+  @apply font-medium text-gray-900 mb-1;
+}
+
+.secondaryText {
+  @apply text-sm text-gray-500;
+}
+
+/* File List */
+.fileList {
+  @apply mt-4 space-y-2;
+}
+
+.fileItem {
+  @apply flex items-center justify-between p-3 bg-white border border-gray-200 rounded-md shadow-sm;
+}
+
+.fileInfo {
+  @apply flex items-center flex-1 min-w-0;
+}
+
+.filePreview {
+  @apply w-12 h-12 object-cover rounded mr-3 flex-shrink-0;
+}
+
+.fileIcon {
+  @apply w-12 h-12 flex items-center justify-center text-2xl bg-gray-100 rounded mr-3 flex-shrink-0;
+}
+
+.fileDetails {
+  @apply flex-1 min-w-0;
+}
+
+.fileName {
+  @apply font-medium text-gray-900 truncate;
+}
+
+.fileSize {
+  @apply text-sm text-gray-500;
+}
+
+.progressBar {
+  @apply w-full bg-gray-200 rounded-full h-1 mt-1;
+}
+
+.progressFill {
+  @apply bg-blue-600 h-1 rounded-full transition-all duration-300;
+}
+
+.removeButton {
+  @apply ml-3 text-gray-400 hover:text-red-600 focus:outline-none focus:text-red-600 transition-colors duration-200 flex-shrink-0;
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .dropzone {
+    @apply p-4;
+  }
+  
+  .uploadIcon {
+    @apply text-3xl;
+  }
+  
+  .primaryText {
+    @apply text-sm;
+  }
+  
+  .secondaryText {
+    @apply text-xs;
+  }
+  
+  .fileItem {
+    @apply p-2;
+  }
+  
+  .filePreview,
+  .fileIcon {
+    @apply w-10 h-10 mr-2;
+  }
+  
+  .fileName {
+    @apply text-sm;
+  }
+  
+  .fileSize {
+    @apply text-xs;
+  }
+}

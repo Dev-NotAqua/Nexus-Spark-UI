@@ -1,0 +1,176 @@
+/* Pagination Component Styles */
+.pagination {
+  @apply flex flex-wrap items-center justify-between gap-4;
+}
+
+.pagination.disabled {
+  @apply opacity-50 pointer-events-none;
+}
+
+.totalInfo {
+  @apply text-gray-600;
+}
+
+.totalInfo.sm {
+  @apply text-xs;
+}
+
+.totalInfo.md {
+  @apply text-sm;
+}
+
+.totalInfo.lg {
+  @apply text-base;
+}
+
+.paginationControls {
+  @apply flex items-center gap-1;
+}
+
+.navButton {
+  @apply px-3 py-2 text-gray-700 bg-white border border-gray-300 rounded hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200;
+}
+
+.navButton.sm {
+  @apply px-2 py-1 text-xs;
+}
+
+.navButton.md {
+  @apply px-3 py-2 text-sm;
+}
+
+.navButton.lg {
+  @apply px-4 py-2 text-base;
+}
+
+.navButton.disabled {
+  @apply bg-gray-100 text-gray-400 cursor-not-allowed hover:bg-gray-100;
+}
+
+.pageNumbers {
+  @apply flex items-center gap-1 mx-2;
+}
+
+.pageButton {
+  @apply px-3 py-2 text-gray-700 bg-white border border-gray-300 rounded hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200;
+}
+
+.pageButton.sm {
+  @apply px-2 py-1 text-xs min-w-[2rem];
+}
+
+.pageButton.md {
+  @apply px-3 py-2 text-sm min-w-[2.5rem];
+}
+
+.pageButton.lg {
+  @apply px-4 py-2 text-base min-w-[3rem];
+}
+
+.pageButton.active {
+  @apply bg-blue-600 text-white border-blue-600 hover:bg-blue-700;
+}
+
+.pageButton.disabled {
+  @apply bg-gray-100 text-gray-400 cursor-not-allowed hover:bg-gray-100;
+}
+
+.ellipsis {
+  @apply px-2 py-2 text-gray-500;
+}
+
+.ellipsis.sm {
+  @apply px-1 py-1 text-xs;
+}
+
+.ellipsis.md {
+  @apply px-2 py-2 text-sm;
+}
+
+.ellipsis.lg {
+  @apply px-3 py-2 text-base;
+}
+
+.sizeChanger {
+  @apply flex items-center gap-2 text-gray-600;
+}
+
+.sizeChanger.sm {
+  @apply text-xs;
+}
+
+.sizeChanger.md {
+  @apply text-sm;
+}
+
+.sizeChanger.lg {
+  @apply text-base;
+}
+
+.sizeSelect {
+  @apply px-2 py-1 border border-gray-300 rounded bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
+}
+
+.sizeSelect.sm {
+  @apply px-1.5 py-0.5 text-xs;
+}
+
+.sizeSelect.md {
+  @apply px-2 py-1 text-sm;
+}
+
+.sizeSelect.lg {
+  @apply px-3 py-1.5 text-base;
+}
+
+.quickJumper {
+  @apply flex items-center gap-2 text-gray-600;
+}
+
+.quickJumper.sm {
+  @apply text-xs;
+}
+
+.quickJumper.md {
+  @apply text-sm;
+}
+
+.quickJumper.lg {
+  @apply text-base;
+}
+
+.quickInput {
+  @apply w-16 px-2 py-1 border border-gray-300 rounded bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
+}
+
+.quickInput.sm {
+  @apply w-12 px-1.5 py-0.5 text-xs;
+}
+
+.quickInput.md {
+  @apply w-16 px-2 py-1 text-sm;
+}
+
+.quickInput.lg {
+  @apply w-20 px-3 py-1.5 text-base;
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .pagination {
+    @apply flex-col items-stretch gap-2;
+  }
+  
+  .paginationControls {
+    @apply justify-center;
+  }
+  
+  .pageNumbers {
+    @apply mx-1;
+  }
+  
+  .sizeChanger,
+  .quickJumper {
+    @apply justify-center;
+  }
+}

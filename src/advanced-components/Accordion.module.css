@@ -1,0 +1,68 @@
+/* Accordion Component Styles */
+.accordion {
+  @apply w-full border border-gray-200 rounded-lg overflow-hidden;
+}
+
+.accordionItem {
+  @apply border-b border-gray-200 last:border-b-0;
+}
+
+.accordionItem.disabled {
+  @apply opacity-50;
+}
+
+.accordionHeader {
+  @apply w-full px-4 py-3 text-left bg-white hover:bg-gray-50 focus:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset transition-colors duration-200 flex items-center justify-between;
+}
+
+.accordionHeader.sm {
+  @apply px-3 py-2;
+}
+
+.accordionHeader.md {
+  @apply px-4 py-3;
+}
+
+.accordionHeader.lg {
+  @apply px-6 py-4;
+}
+
+.accordionHeader.disabled {
+  @apply cursor-not-allowed hover:bg-white focus:bg-white;
+}
+
+.accordionTitle {
+  @apply font-medium text-gray-900 text-left;
+}
+
+.accordionIcon {
+  @apply ml-2 text-gray-500 transition-transform duration-200 flex-shrink-0;
+}
+
+.accordionIcon.rotated {
+  @apply transform rotate-180;
+}
+
+.accordionContent {
+  @apply overflow-hidden transition-all duration-300 ease-in-out max-h-0;
+}
+
+.accordionContent.open {
+  @apply max-h-screen;
+}
+
+.accordionContentInner {
+  @apply px-4 py-3 bg-gray-50 text-gray-700;
+}
+
+.accordionContentInner.sm {
+  @apply px-3 py-2 text-sm;
+}
+
+.accordionContentInner.md {
+  @apply px-4 py-3 text-base;
+}
+
+.accordionContentInner.lg {
+  @apply px-6 py-4 text-lg;
+}
