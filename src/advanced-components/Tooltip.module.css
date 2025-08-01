@@ -1,0 +1,126 @@
+/* Tooltip Component Styles */
+.tooltipContainer {
+  @apply relative inline-block;
+}
+
+.tooltipTrigger {
+  @apply focus:outline-none;
+}
+
+.tooltip {
+  @apply absolute z-50 px-2 py-1 text-sm font-medium rounded shadow-lg pointer-events-none;
+  animation: tooltipFadeIn 0.15s ease-out;
+}
+
+.tooltip.sm {
+  @apply px-1.5 py-0.5 text-xs;
+}
+
+.tooltip.md {
+  @apply px-2 py-1 text-sm;
+}
+
+.tooltip.lg {
+  @apply px-3 py-2 text-base;
+}
+
+/* Dark variant */
+.tooltip.dark {
+  @apply bg-gray-900 text-white border border-gray-700;
+}
+
+/* Light variant */
+.tooltip.light {
+  @apply bg-white text-gray-900 border border-gray-300;
+}
+
+/* Positioning */
+.tooltip.top {
+  @apply bottom-full left-1/2 transform -translate-x-1/2 mb-2;
+}
+
+.tooltip.bottom {
+  @apply top-full left-1/2 transform -translate-x-1/2 mt-2;
+}
+
+.tooltip.left {
+  @apply right-full top-1/2 transform -translate-y-1/2 mr-2;
+}
+
+.tooltip.right {
+  @apply left-full top-1/2 transform -translate-y-1/2 ml-2;
+}
+
+.tooltipContent {
+  @apply whitespace-nowrap;
+}
+
+/* Arrow styles */
+.tooltipArrow {
+  @apply absolute w-0 h-0;
+  border: 5px solid transparent;
+}
+
+/* Top arrow */
+.tooltipArrow.top {
+  @apply top-full left-1/2 transform -translate-x-1/2;
+}
+
+.tooltipArrow.top.dark {
+  border-top-color: theme('colors.gray.900');
+}
+
+.tooltipArrow.top.light {
+  border-top-color: theme('colors.white');
+}
+
+/* Bottom arrow */
+.tooltipArrow.bottom {
+  @apply bottom-full left-1/2 transform -translate-x-1/2;
+}
+
+.tooltipArrow.bottom.dark {
+  border-bottom-color: theme('colors.gray.900');
+}
+
+.tooltipArrow.bottom.light {
+  border-bottom-color: theme('colors.white');
+}
+
+/* Left arrow */
+.tooltipArrow.left {
+  @apply left-full top-1/2 transform -translate-y-1/2;
+}
+
+.tooltipArrow.left.dark {
+  border-left-color: theme('colors.gray.900');
+}
+
+.tooltipArrow.left.light {
+  border-left-color: theme('colors.white');
+}
+
+/* Right arrow */
+.tooltipArrow.right {
+  @apply right-full top-1/2 transform -translate-y-1/2;
+}
+
+.tooltipArrow.right.dark {
+  border-right-color: theme('colors.gray.900');
+}
+
+.tooltipArrow.right.light {
+  border-right-color: theme('colors.white');
+}
+
+/* Animation */
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
